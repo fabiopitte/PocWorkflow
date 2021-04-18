@@ -1,0 +1,99 @@
+{
+  "boxes": [
+    {
+      "id": 1,
+      "type": "start",
+      "parentId": null,
+      "hasChild": false,
+      "tags": ["segments", "campaigns"],
+      "data": {
+        "name": "initial box",
+        "createdDate": "2021-03-03",
+        "isActive": true
+      }
+    },
+    {
+      "id": 2,
+      "type": "email",
+      "parentId": 1,
+      "hasChild": false,
+      "data": {
+        "name": "email box",
+        "createdDate": "2021-03-03",
+        "isActive": true
+      }
+    },
+    {
+      "id": 3,
+      "type": "timer",
+      "parentId": 2,
+      "hasChild": false,
+      "data": {
+        "name": "timer box",
+        "createdDate": "2021-03-03",
+        "isActive": true
+      }
+    },
+    {
+      "id": 4,
+      "type": "conditional",
+      "parentId": 3,
+      "hasChild": true,
+      "children": [
+        {
+          "id": 5,
+          "type": "conditional-left",
+          "parentId": 4,
+          "hasChild": true,
+          "children": [
+            {
+              "id": 6,
+              "type": "timer",
+              "parentId": 5,
+              "hasChild": false,
+              "data": {
+                "name": "timer box",
+                "createdDate": "2021-03-03",
+                "isActive": true
+              }
+            }
+          ],
+          "data": {
+            "name": "conditional yes",
+            "createdDate": "2021-03-03",
+            "isActive": true
+          }
+        },
+        {
+          "id": 7,
+          "type": "conditional-right",
+          "parentId": 4,
+          "hasChild": true,
+          "children": [
+            {
+              "id": 8,
+              "type": "email",
+              "parentId": 7,
+              "hasChild": false,
+              "data": {
+                "name": "timer box",
+                "createdDate": "2021-03-03",
+                "isActive": true
+              }
+            }
+          ],
+          "data": {
+            "name": "conditional no",
+            "createdDate": "2021-03-03",
+            "isActive": true
+          }
+        }
+      ],
+      "data": {
+        "name": "conditional box",
+        "createdDate": "2021-03-03",
+        "isActive": true
+      }
+    }
+  ]
+}
