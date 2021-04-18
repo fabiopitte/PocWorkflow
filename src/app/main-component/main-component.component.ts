@@ -38,8 +38,8 @@ export class MainComponentComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {}
   ngOnInit() {
-    // this.allData = [];
-    this.allData = this.workflowServices.get();
+    this.allData = [];
+    // this.allData = this.workflowServices.get();
 
     if (this.allData.length == 0) {
       this.createInstance(BoxStartTemplateComponent);

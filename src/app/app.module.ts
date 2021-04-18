@@ -8,6 +8,7 @@ import { BoxEmailTemplateComponent } from './box-email-template/box-email-templa
 import { BoxTimerTemplateComponent } from './box-timer-template/box-timer-template.component';
 import { BoxStartTemplateComponent } from './box-start-template/box-start-template.component';
 import { BoxConditionalTemplateComponent } from './box-conditional-template/box-conditional-template.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { BoxConditionalTemplateComponent } from './box-conditional-template/box-
     BoxStartTemplateComponent,
     BoxConditionalTemplateComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
 })

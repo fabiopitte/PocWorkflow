@@ -12151,17 +12151,6 @@ body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown):not(.kt-sweetal
   /* Legacy iOS */
 }
 
-/* poppins-700 - latin */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 700;
-  src: url("../css/fonts/poppins-v6-latin-700.eot");
-  /* IE9 Compat Modes */
-  src: local("Poppins Bold"), local("Poppins-Bold"), url("../css/fonts/poppins-v6-latin-700.eot?#iefix") format("embedded-opentype"), url("../css/fonts/poppins-v6-latin-700.woff2") format("woff2"), url("../css/fonts/poppins-v6-latin-700.woff") format("woff"), url("../css/fonts/poppins-v6-latin-700.ttf") format("truetype"), url("../css/fonts/poppins-v6-latin-700.svg#Poppins") format("svg");
-  /* Legacy iOS */
-}
-
 /* Reset Styles */
 html, body {
   padding: 0;

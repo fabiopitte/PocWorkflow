@@ -1,18 +1,8 @@
-.addNewIcon {
-  margin-left: 2px;
-  box-sizing: border-box;
+.wrap-content {
+  color: #212529;
   position: relative;
-  display: inline-block;
-  width: 28px;
-  height: 28px;
-  line-height: 26px;
-  border-radius: 50%;
-  font-size: 8px;
-  color: var(--slate-550);
-  text-align: center;
-  background: #fff;
-  border: 2px solid var(--slate-300);
-  -webkit-box-shadow: 0 4px 4px 0 rgb(0 0 0 / 13%);
-  box-shadow: 0 4px 4px 0 rgb(0 0 0 / 13%);
-  cursor: pointer;
+  width: max-content;
+  margin: auto 50%;
+  transform: translate(-50%);
+  padding: 1rem;
 }

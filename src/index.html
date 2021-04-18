@@ -7,7 +7,152 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
+    <!-- <link rel="stylesheet" href="../assets/css/dark-template.css" /> -->
     <link rel="stylesheet" href="../assets/css/light-template.css" />
+    <style>
+      :root {
+        --b-0: 0;
+        --b-100: 1px;
+        --b-200: 2px;
+        --b-300: 4px;
+        --b-none: none;
+        --b-dashed: dashed;
+        --b-solid: solid;
+        --radii-0: 0;
+        --radii-100: 4px;
+        --radii-200: 8px;
+        --radii-rounded: 99rem;
+        --radii-circle: 100%;
+        --shadow-50: 0 1px 4px rgba(31, 33, 41, 0.3);
+        --shadow-100: 0 4px 8px -2px rgba(31, 33, 41, 0.3);
+        --shadow-200: 0 4px 12px 0 rgba(31, 33, 41, 0.08);
+        --shadow-300: 0 14px 22px 0 rgba(31, 33, 41, 0.1);
+        --shadow-400: 0 26px 32px 0 rgba(31, 33, 41, 0.3);
+        --banana-100: #fff9e6;
+        --banana-200: #fdecb2;
+        --banana-300: #fce28b;
+        --banana-400: #fbd965;
+        --banana-500: #facf3f;
+        --banana-600: #deaa00;
+        --black: #000;
+        --creamsicle-100: #fff8f2;
+        --creamsicle-200: #ffe1cb;
+        --creamsicle-300: #ffbf90;
+        --creamsicle-400: #ffa869;
+        --creamsicle-500: #ff8730;
+        --creamsicle-600: #e66000;
+        --lavender-100: #f7f2ff;
+        --lavender-200: #eae0fe;
+        --lavender-300: #c3a7fc;
+        --lavender-400: #aa81fc;
+        --lavender-500: #9159fc;
+        --lavender-600: #73f;
+        --mint-100: #ebfffa;
+        --mint-200: #b6f2e4;
+        --mint-300: #6ae6c9;
+        --mint-400: #1bddb1;
+        --mint-500: #19cca3;
+        --mint-600: #11866f;
+        --network-android: #3ddc84;
+        --network-apple: #1f2129;
+        --network-facebook: #1877f2;
+        --network-instagram: #1f2129;
+        --network-linked-in: #2867b2;
+        --network-twitter: #1da1f2;
+        --network-you-tube: red;
+        --ocean-100: #fafbff;
+        --ocean-150: #edf3fe;
+        --ocean-200: #e3ebfc;
+        --ocean-300: #c1d1f7;
+        --ocean-400: #5884ea;
+        --ocean-500: #356ae6;
+        --ocean-600: #1b54d9;
+        --ocean-700: #123b99;
+        --slate-100: #f7f9ff;
+        --slate-150: #edf0f7;
+        --slate-200: #ced3e0;
+        --slate-300: #9298ad;
+        --slate-400: #5f667e;
+        --slate-500: #4e5468;
+        --slate-550: #353a4a;
+        --slate-600: #1f2129;
+        --strawberry-100: #fff2f6;
+        --strawberry-200: #fcdee7;
+        --strawberry-300: #faa5bd;
+        --strawberry-400: #f56e94;
+        --strawberry-500: #f3376b;
+        --strawberry-600: #e40e49;
+        --strawberry-700: #c60d40;
+        --transparent: transparent;
+        --white: #fff;
+        --duration-fast: 200ms;
+        --duration-medium: 400ms;
+        --duration-slow: 1200ms;
+        --transition-in: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        --transition-out: cubic-bezier(0.23, 1, 0.32, 1);
+        --transition-in-out: cubic-bezier(0.86, 0, 0.07, 1);
+        --transition-out-elastic: cubic-bezier(0.75, 0, 0.25, 1.25);
+        --breakpoint-xs: 480px;
+        --breakpoint-sm: 768px;
+        --breakpoint-md: 1024px;
+        --breakpoint-lg: 1280px;
+        --breakpoint-xl: 1920px;
+        --sp-0: 0;
+        --sp-100: 2px;
+        --sp-200: 4px;
+        --sp-300: 8px;
+        --sp-400: 12px;
+        --sp-500: 16px;
+        --sp-600: 20px;
+        --sp-700: 24px;
+        --sp-800: 28px;
+        --sp-900: 32px;
+        --sp-1000: 48px;
+        --sp-1100: 64px;
+        --sp-1200: 80px;
+        --sp-1300: 128px;
+        --sp-1400: 200px;
+        --sp-1500: 400px;
+        --ff-display: "Poppins", "Avenir", "Avenir Next", "Futura", helvetica,
+          arial, sans-serif;
+        --ff-standard: "IBM Plex Sans", "Franklin Gothic", "ITC Franklin Gothic",
+          helvetica, arial, sans-serif;
+        --fs-100: 12px;
+        --fs-200: 14px;
+        --fs-300: 16px;
+        --fs-400: 18px;
+        --fs-500: 20px;
+        --fs-600: 24px;
+        --fs-700: 28px;
+        --fs-800: 32px;
+        --fs-900: 36px;
+        --fs-1000: 40px;
+        --fs-1100: 44px;
+        --fs-1200: 48px;
+        --fs-1300: 60px;
+        --fw-regular: 400;
+        --fw-medium: 500;
+        --fw-semi-bold: 600;
+        --fw-bold: 700;
+        --lh-100: 16px;
+        --lh-200: 20px;
+        --lh-300: 24px;
+        --lh-400: 28px;
+        --lh-500: 32px;
+        --lh-600: 36px;
+        --lh-700: 44px;
+        --lh-800: 49px;
+        --lh-900: 52px;
+        --lh-1000: 56px;
+        --lh-1100: 76px;
+      }
+
+      .main-panel {
+        padding: 5px;
+        margin: 5px;
+        box-sizing: border-box;
+      }
+    </style>
   </head>
   <body>
     <div class="main-panel">

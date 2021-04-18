@@ -1,2 +1,59 @@
-<ng-template #formTemplate></ng-template>
-<!-- <ng-template #formTemplate2></ng-template> -->
+<div
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-modal="true"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="customModalLabel">Modal Title</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+          <p class="mb-3">
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+            ac consectetur ac, vestibulum at eros.
+          </p>
+          <p class="mb-3">
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+            auctor.
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer custom">
+        <div class="left-side">
+          <button
+            type="button"
+            class="btn btn-link danger"
+            data-dismiss="modal"
+          >
+            Cancel
+          </button>
+        </div>
+        <div class="divider"></div>
+        <div class="right-side">
+          <button type="button" class="btn btn-link success">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap-content">
+  <ng-template #formTemplate></ng-template>
+</div>
