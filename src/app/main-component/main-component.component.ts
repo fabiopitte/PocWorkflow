@@ -1,18 +1,15 @@
-import { AfterViewInit, QueryList } from '@angular/core';
-import { ElementRef } from '@angular/core';
 import {
+  AfterViewInit,
   Component,
   OnInit,
   ViewContainerRef,
   ViewChild,
-  ComponentFactoryResolver,
-  ViewChildren,
+  ComponentFactoryResolver
 } from '@angular/core';
 import { BoxConditionalTemplateComponent } from '../box-conditional-template/box-conditional-template.component';
 import { BoxEmailTemplateComponent } from '../box-email-template/box-email-template.component';
 import { BoxStartTemplateComponent } from '../box-start-template/box-start-template.component';
 import { BoxTimerTemplateComponent } from '../box-timer-template/box-timer-template.component';
-
 import { WorkflowsService } from '../workflows.service';
 
 @Component({
@@ -21,25 +18,21 @@ import { WorkflowsService } from '../workflows.service';
   styleUrls: ['./main-component.component.scss'],
 })
 export class MainComponentComponent implements OnInit, AfterViewInit {
-  //count = 0;
-
-  @ViewChild('formTemplate', { read: ViewContainerRef, static: true })
-  formRef: any;
-
-  // @ViewChildren('formTemplate2')
-  // divs!: QueryList<ElementRef>;
-
+  @ViewChild('formTemplate', { read: ViewContainerRef, static: true }) formRef: any;
   private allData: any;
+  
   constructor(
     public viewContainerRef: ViewContainerRef,
     private componentFactoryResolver: ComponentFactoryResolver,
     private workflowServices: WorkflowsService
   ) {}
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() {    
+  }
+
   ngOnInit() {
-    this.allData = [];
-    // this.allData = this.workflowServices.get();
+    //this.allData = [];
+    this.allData = this.workflowServices.get();
 
     if (this.allData.length == 0) {
       this.createInstance(BoxStartTemplateComponent);
@@ -51,14 +44,14 @@ export class MainComponentComponent implements OnInit, AfterViewInit {
   recursiveFunction(items: any) {
     items.map((item: any) => {
       this.createElement(item);
-      if (item.hasChild) {
-        this.recursiveFunction(item.children);
-      }
+      // if (item.hasChild) {
+      //   this.recursiveFunction(item.children);
+      // }
     });
   }
 
   createElement(item: any) {
-    console.log(item);
+    //console.log(item);
     switch (item.type) {
       case 'start':
         const boxStart = this.createInstance(BoxStartTemplateComponent);
@@ -93,22 +86,10 @@ export class MainComponentComponent implements OnInit, AfterViewInit {
     const newTemplate = this.componentFactoryResolver.resolveComponentFactory(
       template
     );
-    // this.count += 1;
-
-    // debugger;
-    // console.log(this.divs);
-
-    // if (this.count == 6) {
-    //   console.log(this.divs);
-    //   // return this.formRef2.createComponent(newTemplate);
-    // }
-
     return this.formRef.createComponent(newTemplate);
-    // return this.formRef2.createComponent(conditional);
   }
 
   openModal() {
-    console.log('open a modal');
-    this.recursiveFunction(this.allData.default.boxes);
+    //this.recursiveFunction(this.allData.default.boxes);
   }
 }

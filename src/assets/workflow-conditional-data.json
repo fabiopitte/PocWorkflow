@@ -1,0 +1,63 @@
+{
+    "boxes": [
+        {
+        "id": 5,
+        "type": "conditional-left",
+        "parentId": 4,
+        "hasChild": true,
+        "children": [
+            {
+            "id": 6,
+            "type": "timer",
+            "parentId": 5,
+            "hasChild": false,
+            "data": {
+                "name": "timer box",
+                "createdDate": "2021-03-06",
+                "isActive": true
+            }
+            }
+        ],
+        "data": {
+            "name": "conditional yes",
+            "createdDate": "2021-03-03",
+            "isActive": true
+        }
+        },
+        {
+        "id": 7,
+        "type": "conditional-right",
+        "parentId": 4,
+        "hasChild": true,
+        "children": [
+            {
+            "id": 8,
+            "type": "email",
+            "parentId": 7,
+            "hasChild": false,
+            "data": {
+                "name": "timer box",
+                "createdDate": "2021-03-08",
+                "isActive": true
+            }
+            },
+            {
+                "id": 20,
+                "type": "email",
+                "parentId": 7,
+                "hasChild": false,
+                "data": {
+                    "name": "email",
+                    "createdDate": "2021-03-08",
+                    "isActive": true
+                }
+                }
+        ],
+        "data": {
+            "name": "conditional no",
+            "createdDate": "2021-03-03",
+            "isActive": true
+        }
+        }
+    ]
+}
