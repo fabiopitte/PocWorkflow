@@ -57,9 +57,9 @@ export class BoxConditionalTemplateComponent implements OnInit, AfterViewInit {
   recursiveFunction(items: any) {
     items.map((item: any) => {
       this.createElement(item);
-      if (item.hasChild) {
-        this.recursiveFunction(item.children);
-      }
+      // if (item.hasChild) {
+      //   this.recursiveFunction(item.children);
+      // }
     });
   }
 
