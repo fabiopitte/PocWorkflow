@@ -10,6 +10,7 @@ export class BoxTimerTemplateComponent implements OnInit {
   @Input() title: string;
   @Input() id: string;
   @Input() description: string;
+  @Input() allData: any;
 
   closeResult = '';
 
@@ -17,6 +18,7 @@ export class BoxTimerTemplateComponent implements OnInit {
     this.id = '';
     this.title = '';
     this.description = '';
+    this.allData = null;
   }
 
   ngOnInit(): void {}

@@ -22,9 +22,10 @@ export class BoxConditionalTemplateComponent implements OnInit, AfterViewInit {
   @Input() title: string;
   @Input() description: string;
   @Input() id: string;
+  @Input() allData: any;
   @ViewChild('formTemplateLeft', { read: ViewContainerRef, static: true }) formTemplateLeft: any;
   @ViewChild('formTemplateRight', { read: ViewContainerRef, static: true }) formTemplateRight: any;
-  private allData: any;
+  private conditionalData: any;
   closeResult = '';
   position: string = 'left';
 
@@ -37,20 +38,23 @@ export class BoxConditionalTemplateComponent implements OnInit, AfterViewInit {
     this.id = '';
     this.title = '';
     this.description = '';
+    this.allData = null;
   }
   ngAfterViewInit(): void { }
 
   ngOnInit(): void {    
-    this.allData = this.workflowServices.getConditional();
+    this.conditionalData = this.workflowServices.getConditional(this.allData, Number(this.id));
     // if (this.allData.length == 0) {
     //   this.createInstance(BoxStartTemplateComponent);
     //} else {
-    if (this.allData.length != 0) {
+    if (this.conditionalData.length != 0) {
       debugger;
       console.log('children');
-      this.recursiveFunction(this.allData.default.boxes[0].children);
+      // this.recursiveFunction(this.conditionalData.default.boxes[0].children);
+      this.recursiveFunction(this.conditionalData[0].children);
       this.position = 'right';
-      this.recursiveFunction(this.allData.default.boxes[1].children);
+      // this.recursiveFunction(this.conditionalData.default.boxes[1].children);
+      this.recursiveFunction(this.conditionalData[1].children);
     }
 }
 
@@ -64,42 +68,40 @@ export class BoxConditionalTemplateComponent implements OnInit, AfterViewInit {
   }
 
   createElement(item: any) {
-    debugger;
     switch (item.type) {
       case 'start':
         const boxStart = this.createInstance(BoxStartTemplateComponent);
         boxStart.instance.id = item.id;
         boxStart.instance.title = item.type;
         boxStart.instance.description = item.data.name;
+        boxStart.instance.allData = this.conditionalData;
         break;
       case 'email':
         const boxEmail = this.createInstance(BoxEmailTemplateComponent);
         boxEmail.instance.id = item.id;
         boxEmail.instance.title = item.type;
         boxEmail.instance.description = item.data.name;
+        boxEmail.instance.allData = this.conditionalData;
         break;
       case 'timer':
         const boxTimer = this.createInstance(BoxTimerTemplateComponent);
         boxTimer.instance.id = item.id;
         boxTimer.instance.title = item.type;
         boxTimer.instance.description = item.data.name + ' - ' + item.data.createdDate;
+        boxTimer.instance.allData = this.conditionalData;
         break;
       case 'conditional':
-        const boxConditional = this.createInstance(
-          BoxConditionalTemplateComponent
-        );
+        const boxConditional = this.createInstance(BoxConditionalTemplateComponent);
         boxConditional.instance.id = item.id;
         boxConditional.instance.title = item.type;
         boxConditional.instance.description = item.data.name;
+        boxConditional.instance.allData = this.conditionalData;
         break;
     }
   }
 
   createInstance(template: any) {
-    const newTemplate = this.componentFactoryResolver.resolveComponentFactory(
-      template
-    );
-    debugger;
+    const newTemplate = this.componentFactoryResolver.resolveComponentFactory(template);
     if (this.position == 'left') {
       return this.formTemplateLeft.createComponent(newTemplate);
     }

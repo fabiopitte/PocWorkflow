@@ -10,12 +10,14 @@ export class BoxStartTemplateComponent implements OnInit {
   @Input() title: string;
   @Input() description: string;
   @Input() id: string;
+  @Input() allData: any;
   closeResult = '';
 
   constructor(private modalService: NgbModal) {
     this.id = '';
     this.title = '';
     this.description = '';
+    this.allData = null;
   }
 
   ngOnInit(): void {}

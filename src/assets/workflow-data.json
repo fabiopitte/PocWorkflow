@@ -80,6 +80,67 @@
                 "createdDate": "2021-03-03",
                 "isActive": true
               }
+            },
+            {
+              "id": 14,
+              "type": "conditional",
+              "parentId": 8,
+              "hasChild": true,
+              "children": [
+                {
+                  "id": 15,
+                  "type": "conditional-left",
+                  "parentId": 14,
+                  "hasChild": true,
+                  "children": [
+                    {
+                      "id": 16,
+                      "type": "timer",
+                      "parentId": 15,
+                      "hasChild": false,
+                      "data": {
+                        "name": "timer box",
+                        "createdDate": "2021-03-03",
+                        "isActive": true
+                      }
+                    }
+                  ],
+                  "data": {
+                    "name": "conditional yes",
+                    "createdDate": "2021-03-03",
+                    "isActive": true
+                  }
+                },
+                {
+                  "id": 17,
+                  "type": "conditional-right",
+                  "parentId": 14,
+                  "hasChild": true,
+                  "children": [
+                    {
+                      "id": 18,
+                      "type": "email",
+                      "parentId": 17,
+                      "hasChild": false,
+                      "data": {
+                        "name": "timer box",
+                        "createdDate": "2021-03-03",
+                        "isActive": true
+                      }
+                    }
+                  ],
+                  "data": {
+                    "name": "conditional no",
+                    "createdDate": "2021-03-03",
+                    "isActive": true
+                  }
+                }
+              ],
+              "data": {
+                "name": "conditional box",
+                "createdDate": "2021-03-03",
+                "isActive": true
+              }
             }
           ],
           "data": {

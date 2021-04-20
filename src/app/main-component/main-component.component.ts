@@ -58,18 +58,21 @@ export class MainComponentComponent implements OnInit, AfterViewInit {
         boxStart.instance.id = item.id;
         boxStart.instance.title = item.type;
         boxStart.instance.description = item.data.name;
+        boxStart.instance.allData = this.allData;
         break;
       case 'email':
         const boxEmail = this.createInstance(BoxEmailTemplateComponent);
         boxEmail.instance.id = item.id;
         boxEmail.instance.title = item.type;
         boxEmail.instance.description = item.data.name;
+        boxEmail.instance.allData = this.allData;
         break;
       case 'timer':
         const boxTimer = this.createInstance(BoxTimerTemplateComponent);
         boxTimer.instance.id = item.id;
         boxTimer.instance.title = item.type;
         boxTimer.instance.description = item.data.name;
+        boxTimer.instance.allData = this.allData;
         break;
       case 'conditional':
         const boxConditional = this.createInstance(
@@ -78,6 +81,7 @@ export class MainComponentComponent implements OnInit, AfterViewInit {
         boxConditional.instance.id = item.id;
         boxConditional.instance.title = item.type;
         boxConditional.instance.description = item.data.name;
+        boxConditional.instance.allData = this.allData;
         break;
     }
   }
